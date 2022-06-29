@@ -5,16 +5,19 @@ const path = require('path');
 const template = require('./template');
 const commander = require('commander');
 
-commander.arguments('<parent-folder> <component-folder>').action((parentName, componentName) => {
+const camelCase = (str) => {
+  return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+};
+
+commander.arguments('<component-folder>').action((componentName) => {
   componentFolder = componentName;
-  parentFolder = parentName;
 });
 
 commander.parse(process.argv);
 
 const checkArguments = () => {
-  if (typeof componentFolder === 'undefined' || typeof parentFolder === 'undefined') {
-    console.error('command requires format: make-ts-component <parent-folder> <component-folder>');
+  if (typeof componentFolder === 'undefined') {
+    console.error('command requires format: make-ts-component <component-folder>');
     process.exit(1);
   }
 };
@@ -26,15 +29,13 @@ const checkFolderExists = (folder) => {
   }
 };
 
-const createComponentFile = (parentName, componentName) => {
+const createComponentFile = (componentName) => {
   checkArguments();
 
   const components = path.resolve('components');
-  const parentOfComponent = path.resolve('components/' + parentFolder);
-  const nameOfComponent = path.resolve('components/' + parentFolder + '/' + componentName);
+  const nameOfComponent = path.resolve('components/' + componentName);
 
   checkFolderExists(components);
-  checkFolderExists(parentOfComponent);
   checkFolderExists(nameOfComponent);
 
   const tsx = template.createFCTsx(componentName);
@@ -43,19 +44,19 @@ const createComponentFile = (parentName, componentName) => {
 
   tsx.forEach((line) => {
     fs.appendFileSync(`${nameOfComponent}/${componentName}.tsx`, line);
-    fs.appendFileSync(`${nameOfComponent}/$componentName}.tsx`, '\n');
+    fs.appendFileSync(`${nameOfComponent}/${componentName}.tsx`, '\n');
   });
 
   test.forEach((line) => {
-    fs.appendFileSync(`${nameOfComponent}/${componentName}.test.tsx`, line);
-    fs.appendFileSync(`${nameOfComponent}/${componentName}.test.tsx`, '\n');
+    fs.appendFileSync(`${nameOfComponent}/${camelCase(componentName)}.test.tsx`, line);
+    fs.appendFileSync(`${nameOfComponent}/${camelCase(componentName)}.test.tsx`, '\n');
   });
 
   index.forEach((line) => {
     fs.appendFileSync(`${nameOfComponent}/index.ts`, line);
     fs.appendFileSync(`${nameOfComponent}/index.ts`, '\n');
   });
-  console.log(`Component ${componentName} has been created in ${parentFolder} folder`);
+  console.log(`Component ${componentName} has been created in components folder`);
 };
 
-createComponentFile(parentFolder, componentFolder);
+createComponentFile(componentFolder);

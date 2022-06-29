@@ -17,7 +17,7 @@ module.exports.createFCTsx = (name) => [
 
 module.exports.createTestTsx = (name) => [
   `import React, { FC } from 'react';`,
-  '',
+  `import faker from 'faker';`,
   `import { act, create, ReactTestRenderer } from 'react-test-renderer';`,
   `import ${name} from './${name}';`,
   '',
@@ -28,7 +28,7 @@ module.exports.createTestTsx = (name) => [
   `let renderer: ReactTestRenderer;`,
   '',
   `act(() => {`,
-  `renderer = create(<${name} />);``});`,
+  `renderer = create(<${name} />);`,
   `expect(renderer!.toJSON()).toMatchSnapshot('Initial');`,
   `});`,
   `});`,
