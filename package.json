@@ -1,6 +1,6 @@
 {
   "name": "make-ts-component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "an npm package to create react typscript components and reduce repetition",
   "main": "./bin/index.js",
   "scripts": {
