@@ -1,6 +1,6 @@
 {
   "name": "make-ts-component",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Creates react typscript components, with index and test file",
   "keywords": [
     "react",
