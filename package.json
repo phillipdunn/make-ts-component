@@ -1,0 +1,19 @@
+{
+  "name": "make-ts-component",
+  "version": "1.0.0",
+  "description": "an npm package to create react typscript components and reduce repetition",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/phillipdunn/make-ts-component.git"
+  },
+  "author": "phillipdunn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phillipdunn/make-ts-component/issues"
+  },
+  "homepage": "https://github.com/phillipdunn/make-ts-component#readme"
+}
