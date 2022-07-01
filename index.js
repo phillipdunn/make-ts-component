@@ -4,7 +4,7 @@ const template = require('./template');
 const commander = require('commander');
 
 const camelCase = (str) => {
-  return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+  return str[0].toLowerCase() + str.slice(1);
 };
 
 commander.arguments('<component-folder>').action((componentName) => {
