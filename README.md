@@ -14,7 +14,7 @@ following files inside:
 ## Install
 
 ```bash
-npm install --save-dev make-ts-component
+npx make-ts-component
 ```
 
 ## Run script
