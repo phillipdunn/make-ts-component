@@ -1,3 +1,5 @@
+#!/bin/bash
+
 const fs = require('fs');
 const path = require('path');
 const template = require('./template');
