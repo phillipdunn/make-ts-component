@@ -1,6 +1,6 @@
 {
   "name": "make-ts-component",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Creates react typscript components, with index and test file",
   "keywords": [
     "react",
@@ -17,7 +17,7 @@
   ],
   "main": "./index.js",
   "scripts": {
-    "test": "node ./bin/index.js TestComponent"
+    "test": "node ./index.js TestComponent"
   },
   "repository": {
     "type": "git",
