@@ -17,6 +17,22 @@ following files inside:
 npm i make-ts-component
 ```
 
+## Add Script
+
+In your package.json file add the following line inside 'scripts':
+
+```bash
+"make-ts-component": "node ./node_modules/make-ts-component"
+```
+
+e.g.
+
+```bash
+"scripts" : {
+"make-ts-component": "node ./node_modules/make-ts-component"
+}
+```
+
 ## Run script
 
 In the command line enter the following using npm:
