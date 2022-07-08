@@ -4,7 +4,7 @@ module.exports.createFCTsx = (name) => [
   `interface Props {`,
   `props: any }`,
   '',
-  `const ${name}: FC<Props> = ({ props }) = () => {`,
+  `const ${name}: FC<Props> = ({ props }) => {`,
   `  return (`,
   `    <>`,
   `      <div>${name} renders</div>`,

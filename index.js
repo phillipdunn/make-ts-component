@@ -38,7 +38,7 @@ const createComponentFile = (componentName) => {
 
   const tsx = template.createFCTsx(componentName);
   const test = template.createTestTsx(componentName);
-  const index = [`import ${componentName} from "./${componentName}";`, '', `export default ${componentName};`];
+  const index = [`import ${componentName} from './${componentName}';`, '', `export default ${componentName};`];
 
   tsx.forEach((line) => {
     fs.appendFileSync(`${nameOfComponent}/${componentName}.tsx`, line);
