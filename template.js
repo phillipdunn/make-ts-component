@@ -16,8 +16,8 @@ module.exports.createFCTsx = (name) => [
 ];
 
 module.exports.createTestTsx = (name) => [
-  `import React, { FC } from 'react';`,
-  `import faker from 'faker';`,
+  `import React from 'react';`,
+  `import { faker } from '@faker-js/faker';`,
   `import { act, create, ReactTestRenderer } from 'react-test-renderer';`,
   `import ${name} from './${name}';`,
   '',
