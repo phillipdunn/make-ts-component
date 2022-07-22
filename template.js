@@ -32,4 +32,5 @@ module.exports.createTestTsx = (name) => [
   `expect(renderer!.toJSON()).toMatchSnapshot('Initial');`,
   `});`,
   `});`,
+  `});`,
 ];

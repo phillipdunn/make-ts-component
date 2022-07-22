@@ -22,14 +22,14 @@ npm i make-ts-component
 In your package.json file add the following line inside 'scripts':
 
 ```bash
-"make-ts-component": "node ./node_modules/make-ts-component"
+"mktsc": "node ./node_modules/make-ts-component"
 ```
 
 e.g.
 
 ```bash
 "scripts" : {
-"make-ts-component": "node ./node_modules/make-ts-component"
+"mktsc": "node ./node_modules/make-ts-component"
 }
 ```
 
@@ -38,7 +38,7 @@ e.g.
 In the command line enter the following using npm:
 
 ```bash
-npm run make-ts-component <component-name>
+npm run mktsc <component-name>
 ```
 
 ## More detail
@@ -77,7 +77,7 @@ ExampleComponent.test.tsx
 
 ```ts
 import React, {FC} from "react";
-import faker from 'faker'
+import { faker } from '@faker-js/faker';
 import { act, create, ReactTestRenderer } from 'react-test-renderer';
 import ExampleComponent from "./ExampleComponent";
 
