@@ -3,10 +3,6 @@ const path = require('path');
 const template = require('./template');
 const commander = require('commander');
 
-const camelCase = (str) => {
-  return str[0].toLowerCase() + str.slice(1);
-};
-
 commander.arguments('<component-folder>').action((componentName) => {
   componentFolder = componentName;
 });
@@ -46,8 +42,8 @@ const createComponentFile = (componentName) => {
   });
 
   test.forEach((line) => {
-    fs.appendFileSync(`${nameOfComponent}/${camelCase(componentName)}.test.tsx`, line);
-    fs.appendFileSync(`${nameOfComponent}/${camelCase(componentName)}.test.tsx`, '\n');
+    fs.appendFileSync(`${nameOfComponent}/${componentName}.test.tsx`, line);
+    fs.appendFileSync(`${nameOfComponent}/${componentName}.test.tsx`, '\n');
   });
 
   index.forEach((line) => {

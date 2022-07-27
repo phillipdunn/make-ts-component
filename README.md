@@ -48,9 +48,8 @@ All the files are prepopulated with some standard boiler plate code and include 
 index.ts
 
 ```ts
-import Component from "./Component";
+export {default} from "./Component";
 
-export default Component;
 ```
 
 ExampleComponent.tsx
@@ -88,8 +87,8 @@ describe('ExampleComponent tests', () => {
     let renderer: ReactTestRenderer;
     act(() => {
       renderer = create(<${name} />);
-      expect(renderer!.toJSON()).toMatchSnapshot('Initial');
     });
+    expect(renderer!.toJSON()).toMatchSnapshot('Initial');
   });
 });
 ```

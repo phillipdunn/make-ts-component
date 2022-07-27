@@ -29,8 +29,9 @@ module.exports.createTestTsx = (name) => [
   '',
   `act(() => {`,
   `renderer = create(<${name} />);`,
-  `expect(renderer!.toJSON()).toMatchSnapshot('Initial');`,
   `});`,
+  '',
+  `expect(renderer!.toJSON()).toMatchSnapshot('Initial');`,
   `});`,
   `});`,
 ];
