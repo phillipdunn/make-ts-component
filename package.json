@@ -1,6 +1,6 @@
 {
-  "name": "make-ts-component",
-  "version": "1.0.26",
+  "name": "@phillipdunn/make-ts-component",
+  "version": "1.0.28",
   "description": "Creates react typscript components, with index and test file",
   "keywords": [
     "react",
@@ -19,7 +19,7 @@
     "test": "node ./index.js TestComponent"
   },
   "publishConfig": {
-    "phillipdunn:registry": "https://npm.pkg.github.com"
+    "phillipdunn:registry": "registry: https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",

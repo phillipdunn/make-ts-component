@@ -29,7 +29,7 @@ module.exports.createTestTsx = (name) => [
   `       let renderer: ReactTestRenderer;`,
   '',
   `       act(() => {`,
-  `renderer = create(<${name} />);`,
+  `         renderer = create(<${name} />);`,
   `       });`,
   '',
   `       expect(renderer!.toJSON()).toMatchSnapshot('Initial');`,
